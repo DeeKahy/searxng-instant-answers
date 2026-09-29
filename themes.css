@@ -1,0 +1,255 @@
+/*
+ * Extra colour themes for SearXNG's "simple" theme.
+ *
+ * base.html is patched (see ../selfhosted.nix) so a custom style renders as
+ *   <html class="theme-dark theme-custom theme-nord">   (or theme-light …)
+ * The built-in light/dark rules therefore still apply (code highlighting,
+ * select arrows, anything not expressed as a variable), and this file only
+ * repaints the colour variables. Each theme defines a small palette (--p-*);
+ * the one mapping block below turns that palette into SearXNG's ~100
+ * --color-* variables, so adding a theme is ~15 lines.
+ *
+ * Loaded after sxng-ltr.min.css, so equal-specificity rules here win.
+ */
+
+:root.theme-custom {
+  --color-base-font: var(--p-fg);
+  --color-base-font-rgb: var(--p-fg-rgb);
+  --color-base-background: var(--p-bg);
+  --color-base-background-mobile: var(--p-bg);
+  --color-url-font: var(--p-link);
+  --color-url-visited-font: var(--p-visited);
+  --color-header-background: var(--p-mantle);
+  --color-header-border: var(--p-border);
+  --color-footer-background: var(--p-mantle);
+  --color-footer-border: var(--p-border);
+  --color-sidebar-border: var(--p-border2);
+  --color-sidebar-font: var(--p-fg-strong);
+  --color-sidebar-background: var(--p-surface);
+  --color-backtotop-font: var(--p-fg);
+  --color-backtotop-border: var(--p-border);
+  --color-backtotop-background: var(--p-surface);
+  --color-btn-background: var(--p-accent);
+  --color-btn-font: var(--p-on-accent);
+  --color-show-btn-background: var(--p-surface2);
+  --color-show-btn-font: var(--p-fg-strong);
+  --color-search-border: var(--p-border2);
+  --color-search-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+  --color-search-background: var(--p-surface);
+  --color-search-font: var(--p-fg-strong);
+  --color-search-background-hover: var(--p-accent);
+  --color-error: var(--p-red);
+  --color-error-background: color-mix(in srgb, var(--p-red) 18%, var(--p-bg));
+  --color-warning: var(--p-yellow);
+  --color-warning-background: color-mix(in srgb, var(--p-yellow) 18%, var(--p-bg));
+  --color-success: var(--p-green);
+  --color-success-background: color-mix(in srgb, var(--p-green) 18%, var(--p-bg));
+  --color-categories-item-selected-font: var(--p-accent);
+  --color-categories-item-border-selected: var(--p-accent);
+  --color-autocomplete-font: var(--p-fg-strong);
+  --color-autocomplete-border: var(--p-border2);
+  --color-autocomplete-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+  --color-autocomplete-background: var(--p-surface);
+  --color-autocomplete-background-hover: var(--p-surface2);
+  --color-answer-font: var(--p-fg);
+  --color-answer-background: var(--p-surface);
+  --color-result-keyvalue-col-table: var(--p-mantle);
+  --color-result-keyvalue-odd: var(--p-mantle);
+  --color-result-keyvalue-even: var(--p-surface);
+  --color-result-background: var(--p-surface);
+  --color-result-border: var(--p-border);
+  --color-result-url-font: var(--p-fg);
+  --color-result-vim-selected: color-mix(in srgb, var(--p-surface2) 80%, transparent);
+  --color-result-vim-arrow: var(--p-accent);
+  --color-result-description-highlight-font: var(--p-fg-strong);
+  --color-result-link-font: var(--p-link);
+  --color-result-link-font-highlight: var(--p-link);
+  --color-result-link-visited-font: var(--p-visited);
+  --color-result-publishdate-font: var(--p-muted);
+  --color-result-engines-font: var(--p-muted);
+  --color-result-search-url-border: var(--p-border2);
+  --color-result-search-url-font: var(--p-fg-strong);
+  --color-result-detail-font: var(--p-fg-strong);
+  --color-result-detail-label-font: var(--p-fg);
+  --color-result-detail-background: var(--p-mantle);
+  --color-result-detail-hr: var(--p-border2);
+  --color-result-detail-link: var(--p-link);
+  --color-result-detail-loader-border: color-mix(in srgb, var(--p-fg) 20%, transparent);
+  --color-result-detail-loader-borderleft: transparent;
+  --color-result-image-span-font: var(--p-fg);
+  --color-result-image-span-font-selected: var(--p-on-accent);
+  --color-result-image-background: var(--p-bg);
+  --color-settings-tr-hover: var(--p-surface2);
+  --color-settings-engine-description-font: var(--p-muted);
+  --color-settings-table-group-background: var(--p-mantle);
+  --color-toolkit-badge-font: var(--p-fg-strong);
+  --color-toolkit-badge-background: var(--p-surface2);
+  --color-toolkit-kbd-font: var(--p-bg);
+  --color-toolkit-kbd-background: var(--p-fg-strong);
+  --color-toolkit-dialog-border: var(--p-border2);
+  --color-toolkit-dialog-background: var(--p-mantle);
+  --color-toolkit-tabs-label-border: var(--p-bg);
+  --color-toolkit-tabs-section-border: var(--p-border2);
+  --color-toolkit-select-background: var(--p-surface);
+  --color-toolkit-select-border: var(--p-border2);
+  --color-toolkit-select-background-hover: var(--p-surface2);
+  --color-toolkit-input-text-font: var(--p-fg-strong);
+  --color-toolkit-checkbox-onoff-off-background: var(--p-surface);
+  --color-toolkit-checkbox-onoff-on-background: var(--p-surface);
+  --color-toolkit-checkbox-onoff-on-mark-background: var(--p-accent);
+  --color-toolkit-checkbox-onoff-on-mark-color: var(--p-on-accent);
+  --color-toolkit-checkbox-onoff-off-mark-background: var(--p-muted);
+  --color-toolkit-checkbox-onoff-off-mark-color: var(--p-bg);
+  --color-toolkit-checkbox-label-background: var(--p-bg);
+  --color-toolkit-checkbox-label-border: var(--p-border);
+  --color-toolkit-checkbox-input-border: var(--p-accent);
+  --color-toolkit-engine-tooltip-border: var(--p-border);
+  --color-toolkit-engine-tooltip-background: var(--p-bg);
+  --color-toolkit-loader-border: color-mix(in srgb, var(--p-fg) 20%, transparent);
+  --color-toolkit-loader-borderleft: transparent;
+  --color-doc-code: var(--p-fg-strong);
+  --color-doc-code-background: var(--p-surface2);
+  --color-loading-indicator: color-mix(in srgb, var(--p-accent) 25%, transparent);
+  --color-loading-indicator-gap: var(--p-accent);
+  --color-line-number: var(--p-muted);
+  --color-bar-chart-primary: var(--p-accent);
+  --color-bar-chart-secondary: var(--p-surface2);
+  --color-image-resolution-background: color-mix(in srgb, var(--p-bg) 60%, transparent);
+  --color-image-resolution-font: var(--p-fg-strong);
+}
+
+/* ---- flair: make each theme recognisable, not just re-tinted greys ------ */
+
+/* Logo (inline SVG, on the front page and the results header) in the accent. */
+:root.theme-custom svg [stroke="#3050ff"] { stroke: var(--p-accent); }
+:root.theme-custom svg [fill="#3050ff"] { fill: var(--p-accent); }
+
+/* A wash of the accent across the header, and a glowing accent search bar. */
+:root.theme-custom #search_header {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--p-accent) 14%, var(--p-mantle)), var(--p-mantle));
+}
+:root.theme-custom .search_box {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--p-accent) 45%, transparent),
+              0 4px 18px color-mix(in srgb, var(--p-accent) 18%, transparent);
+}
+:root.theme-custom .search_box:focus-within {
+  box-shadow: 0 0 0 2px var(--p-accent),
+              0 4px 22px color-mix(in srgb, var(--p-accent) 30%, transparent);
+}
+
+/* Results as soft cards, the source URL in the accent, query words highlighted. */
+:root.theme-custom #urls article.result {
+  background: var(--p-surface);
+  border: 1px solid var(--p-border);
+  border-radius: 0.8rem;
+  margin: 0 0 0.7rem;
+}
+:root.theme-custom #urls article.result:hover {
+  border-color: color-mix(in srgb, var(--p-accent) 55%, var(--p-border));
+}
+:root.theme-custom #urls article.result .url_header,
+:root.theme-custom #urls article.result .url_wrapper { color: var(--p-accent); }
+:root.theme-custom #urls .content .highlight {
+  color: var(--p-fg-strong);
+  background: color-mix(in srgb, var(--p-accent) 22%, transparent);
+  border-radius: 0.2rem;
+  padding: 0 0.1rem;
+}
+:root.theme-custom ::selection { background: color-mix(in srgb, var(--p-accent) 40%, transparent); }
+
+/* ---- dark palettes ---------------------------------------------------- */
+
+/* Sakura — hot pink on a plum-black night */
+:root.theme-sakura {
+  --p-bg: #1d1520; --p-mantle: #170f19; --p-surface: #271b2a; --p-surface2: #362437;
+  --p-border: #33223a; --p-border2: #573a55;
+  --p-fg: #f0d9e6; --p-fg-rgb: 240, 217, 230; --p-fg-strong: #fff0f7; --p-muted: #b893a9;
+  --p-accent: #ff7eb9; --p-on-accent: #1d1520; --p-link: #ff9fcf; --p-visited: #c9a2ff;
+  --p-red: #ff6b88; --p-yellow: #ffd18a; --p-green: #93e0b0;
+}
+
+/* Catppuccin Mocha — https://catppuccin.com/palette */
+:root.theme-mocha {
+  --p-bg: #1e1e2e; --p-mantle: #181825; --p-surface: #262637; --p-surface2: #313244;
+  --p-border: #313244; --p-border2: #45475a;
+  --p-fg: #cdd6f4; --p-fg-rgb: 205, 214, 244; --p-fg-strong: #e4e9fb; --p-muted: #9399b2;
+  --p-accent: #cba6f7; --p-on-accent: #1e1e2e; --p-link: #89b4fa; --p-visited: #f5c2e7;
+  --p-red: #f38ba8; --p-yellow: #f9e2af; --p-green: #a6e3a1;
+}
+
+/* Tokyo Night — https://github.com/folke/tokyonight.nvim */
+:root.theme-tokyonight {
+  --p-bg: #1a1b26; --p-mantle: #16161e; --p-surface: #1f2335; --p-surface2: #292e42;
+  --p-border: #292e42; --p-border2: #414868;
+  --p-fg: #a9b1d6; --p-fg-rgb: 169, 177, 214; --p-fg-strong: #c0caf5; --p-muted: #737aa2;
+  --p-accent: #7aa2f7; --p-on-accent: #16161e; --p-link: #7dcfff; --p-visited: #bb9af7;
+  --p-red: #f7768e; --p-yellow: #e0af68; --p-green: #9ece6a;
+}
+
+/* Gruvbox dark — https://github.com/morhetz/gruvbox */
+:root.theme-gruvbox {
+  --p-bg: #282828; --p-mantle: #1d2021; --p-surface: #32302f; --p-surface2: #3c3836;
+  --p-border: #3c3836; --p-border2: #504945;
+  --p-fg: #d5c4a1; --p-fg-rgb: 213, 196, 161; --p-fg-strong: #ebdbb2; --p-muted: #a89984;
+  --p-accent: #fabd2f; --p-on-accent: #282828; --p-link: #83a598; --p-visited: #d3869b;
+  --p-red: #fb4934; --p-yellow: #fabd2f; --p-green: #b8bb26;
+}
+
+/* Nord — https://www.nordtheme.com/docs/colors-and-palettes */
+:root.theme-nord {
+  --p-bg: #2e3440; --p-mantle: #292e39; --p-surface: #3b4252; --p-surface2: #434c5e;
+  --p-border: #3b4252; --p-border2: #4c566a;
+  --p-fg: #d8dee9; --p-fg-rgb: 216, 222, 233; --p-fg-strong: #eceff4; --p-muted: #9aa5b8;
+  --p-accent: #88c0d0; --p-on-accent: #2e3440; --p-link: #88c0d0; --p-visited: #b48ead;
+  --p-red: #bf616a; --p-yellow: #ebcb8b; --p-green: #a3be8c;
+}
+
+/* Dracula — https://draculatheme.com/contribute */
+:root.theme-dracula {
+  --p-bg: #282a36; --p-mantle: #21222c; --p-surface: #2f3140; --p-surface2: #44475a;
+  --p-border: #343746; --p-border2: #44475a;
+  --p-fg: #e6e6e0; --p-fg-rgb: 230, 230, 224; --p-fg-strong: #f8f8f2; --p-muted: #8b95c9;
+  --p-accent: #bd93f9; --p-on-accent: #282a36; --p-link: #8be9fd; --p-visited: #ff79c6;
+  --p-red: #ff5555; --p-yellow: #f1fa8c; --p-green: #50fa7b;
+}
+
+/* Rosé Pine — https://rosepinetheme.com/palette */
+:root.theme-rosepine {
+  --p-bg: #191724; --p-mantle: #16141f; --p-surface: #1f1d2e; --p-surface2: #26233a;
+  --p-border: #26233a; --p-border2: #403d52;
+  --p-fg: #e0def4; --p-fg-rgb: 224, 222, 244; --p-fg-strong: #f2f0ff; --p-muted: #908caa;
+  --p-accent: #ebbcba; --p-on-accent: #191724; --p-link: #9ccfd8; --p-visited: #c4a7e7;
+  --p-red: #eb6f92; --p-yellow: #f6c177; --p-green: #31748f;
+}
+
+/* ---- light palettes --------------------------------------------------- */
+
+/* Catppuccin Latte */
+:root.theme-latte {
+  --p-bg: #eff1f5; --p-mantle: #e6e9ef; --p-surface: #ffffff; --p-surface2: #dce0e8;
+  --p-border: #dce0e8; --p-border2: #bcc0cc;
+  --p-fg: #4c4f69; --p-fg-rgb: 76, 79, 105; --p-fg-strong: #303246; --p-muted: #6c6f85;
+  --p-accent: #8839ef; --p-on-accent: #ffffff; --p-link: #1e66f5; --p-visited: #8839ef;
+  --p-red: #d20f39; --p-yellow: #df8e1d; --p-green: #40a02b;
+}
+:root.theme-latte { --color-search-shadow: 0 2px 8px rgb(76 79 105 / 0.12); --color-autocomplete-shadow: 0 2px 8px rgb(76 79 105 / 0.12); }
+
+/* Bubblegum — soft pink paper, raspberry accents */
+:root.theme-bubblegum {
+  --p-bg: #fff4f8; --p-mantle: #ffe6f0; --p-surface: #ffffff; --p-surface2: #ffd9e8;
+  --p-border: #f8d2e1; --p-border2: #eab0c8;
+  --p-fg: #5b3449; --p-fg-rgb: 91, 52, 73; --p-fg-strong: #3b1c2d; --p-muted: #97687f;
+  --p-accent: #e0457b; --p-on-accent: #ffffff; --p-link: #c2185b; --p-visited: #8e3fb5;
+  --p-red: #d32f4f; --p-yellow: #b7791f; --p-green: #2f855a;
+}
+:root.theme-bubblegum { --color-search-shadow: 0 2px 8px rgb(224 69 123 / 0.12); --color-autocomplete-shadow: 0 2px 8px rgb(224 69 123 / 0.12); }
+
+/* Solarized light — https://ethanschoonover.com/solarized/ */
+:root.theme-solarized {
+  --p-bg: #fdf6e3; --p-mantle: #eee8d5; --p-surface: #fffbf0; --p-surface2: #eee8d5;
+  --p-border: #eee8d5; --p-border2: #d6cfb8;
+  --p-fg: #586e75; --p-fg-rgb: 88, 110, 117; --p-fg-strong: #073642; --p-muted: #839496;
+  --p-accent: #268bd2; --p-on-accent: #fdf6e3; --p-link: #268bd2; --p-visited: #6c71c4;
+  --p-red: #dc322f; --p-yellow: #b58900; --p-green: #859900;
+}
+:root.theme-solarized { --color-search-shadow: 0 2px 8px rgb(7 54 66 / 0.10); --color-autocomplete-shadow: 0 2px 8px rgb(7 54 66 / 0.10); }

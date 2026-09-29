@@ -1,0 +1,17 @@
+<div class="ia-card iak-{{ answer.kind }}">
+  <div class="ia-head">
+    {%- if answer.icon %}<span class="ia-icon" aria-hidden="true">{{ answer.icon }}</span>{% endif -%}
+    <span class="ia-title">{{ answer.title }}</span>
+    {%- if answer.copy %}<button class="ia-copy" data-copy="{{ answer.copy }}" title="Copy"><svg class="ia-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button>{% endif -%}
+  </div>
+  {%- if answer.value %}<div class="ia-value">{{ answer.value }}</div>{% endif -%}
+  {%- if answer.sub %}<div class="ia-sub">{{ answer.sub }}</div>{% endif -%}
+  {%- if answer.body %}<div class="ia-body">{{ answer.body | safe }}</div>{% endif -%}
+  {%- if answer.url or answer.source %}
+  <div class="ia-foot">
+    {%- if answer.url -%}
+    <a href="{{ answer.url }}" rel="noreferrer"{% if results_on_new_tab %} target="_blank"{% endif %}>{{ answer.source or urlparse(answer.url).hostname }} ↗</a>
+    {%- else -%}{{ answer.source }}{%- endif -%}
+  </div>
+  {%- endif %}
+</div>

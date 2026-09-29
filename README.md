@@ -7,6 +7,8 @@ Instant-answer cards and per-browser site ranking for [SearXNG](https://github.c
 
 Tested against SearXNG master from **2026-09-22** (`2ed96e6f`) on NixOS.
 
+**📸 [Feature gallery](docs/FEATURES.md)** has a screenshot of every instant answer, the site-ranking UI (with a before/after) and all 13 themes.
+
 | | |
 |---|---|
 | ![weather](screenshots/weather.png) | ![site ranking](screenshots/site-ranking.png) |
@@ -18,7 +20,7 @@ Tested against SearXNG master from **2026-09-22** (`2ed96e6f`) on NixOS.
 ## What's in it
 
 ### `plugins/smallapp_answers.py`: about 45 instant answers
-Search **`help`** on your instance to get a card listing all of them as clickable examples ([screenshot](screenshots/help.png)).
+Search **`help`** on your instance to get a card listing all of them as clickable examples. See them all in the **[feature gallery](docs/FEATURES.md)**.
 
 - **Fun & random:** `roll 2d6+3`, `d20`, `flip a coin` / `plat eller krone`, `random number 1-100`, `pick pizza, sushi or tacos`, `shuffle a, b, c`, `8ball …`, `yes or no`, playable `rock paper scissors`. Everything re-rolls in the browser with a small animation.
 - **Generators:** `password 24` (length slider, regenerated client-side with `crypto.getRandomValues`), `uuid` / `uuid v7`, `lorem ipsum 3`, `qr <text>` (needs [`segno`](https://pypi.org/project/segno/)).
